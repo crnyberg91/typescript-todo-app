@@ -35,12 +35,12 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
 		);
 		setEdit(false);
 	};
+	
+	const inputRef = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
 		inputRef.current?.focus();
 	}, [edit]);
-
-	const inputRef = useRef<HTMLInputElement>(null);
 
 	return (
 		<form className='todos-single' onSubmit={(e) => handleEdit(e, todo.id)}>
